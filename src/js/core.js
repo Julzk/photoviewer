@@ -23,9 +23,9 @@ import {
   isBorderBox,
   getImageScale
 } from './utilities';
-import { draggable } from './draggable';
-import { movable } from './movable';
-import { resizable } from './resizable';
+import {draggable} from './draggable';
+import {movable} from './movable';
+import {resizable} from './resizable';
 
 /**
  * PhotoViewer class
@@ -179,7 +179,7 @@ class PhotoViewer {
     this.$photoviewer.css('z-index', PUBLIC_VARS['zIndex']);
 
     if (this.options.positionFixed) {
-      this.$photoviewer.css({ position: 'fixed' });
+      this.$photoviewer.css({position: 'fixed'});
     }
 
     // Set the handle element for dragging
@@ -368,7 +368,7 @@ class PhotoViewer {
     const stageWidth = this.$stage.width();
     const stageHeight = this.$stage.height();
 
-    const { originalWidth: imgOriginalWidth, originalHeight: imgOriginalHeight } = this.imageData;
+    const {originalWidth: imgOriginalWidth, originalHeight: imgOriginalHeight} = this.imageData;
     const scale = getImageScale(imgOriginalWidth, imgOriginalHeight, stageWidth, stageHeight, this.isRotated);
     const imgWidth = imgOriginalWidth * scale;
     const imgHeight = imgOriginalHeight * scale;
@@ -393,8 +393,8 @@ class PhotoViewer {
     });
 
     setGrabCursor(
-      { w: imgWidth, h: imgHeight },
-      { w: stageWidth, h: stageHeight },
+      {w: imgWidth, h: imgHeight},
+      {w: stageWidth, h: stageHeight},
       this.$stage,
       this.isRotated
     );
@@ -627,8 +627,8 @@ class PhotoViewer {
       });
 
       setGrabCursor(
-        { w: Math.round(imgFrameWidth), h: Math.round(imgFrameHeight) },
-        { w: stageWidth, h: stageHeight },
+        {w: Math.round(imgFrameWidth), h: Math.round(imgFrameHeight)},
+        {w: stageWidth, h: stageHeight},
         this.$stage
       );
     }
@@ -739,10 +739,10 @@ class PhotoViewer {
     const altKey = e.altKey;
 
     switch (keyCode) {
-      case 40:
+      case 38:
         this.zoomTo(1);
         break;
-      case 38:
+      case 40:
         this.resize();
         break;
       // ←
@@ -757,7 +757,7 @@ class PhotoViewer {
       case 187:
         this.zoom(
           this.options.ratioThreshold * 3,
-          { x: this.$stage.width() / 2, y: this.$stage.height() / 2 },
+          {x: this.$stage.width() / 2, y: this.$stage.height() / 2},
           e
         );
         break;
@@ -765,7 +765,7 @@ class PhotoViewer {
       case 189:
         this.zoom(
           -this.options.ratioThreshold * 3,
-          { x: this.$stage.width() / 2, y: this.$stage.height() / 2 },
+          {x: this.$stage.width() / 2, y: this.$stage.height() / 2},
           e
         );
         break;
@@ -773,7 +773,7 @@ class PhotoViewer {
       case 61:
         this.zoom(
           this.options.ratioThreshold * 3,
-          { x: this.$stage.width() / 2, y: this.$stage.height() / 2 },
+          {x: this.$stage.width() / 2, y: this.$stage.height() / 2},
           e
         );
         break;
@@ -781,7 +781,7 @@ class PhotoViewer {
       case 173:
         this.zoom(
           -this.options.ratioThreshold * 3,
-          { x: this.$stage.width() / 2, y: this.$stage.height() / 2 },
+          {x: this.$stage.width() / 2, y: this.$stage.height() / 2},
           e
         );
         break;
@@ -790,7 +790,7 @@ class PhotoViewer {
         if (ctrlKey && altKey) {
           this.zoomTo(
             1,
-            { x: this.$stage.width() / 2, y: this.$stage.height() / 2 },
+            {x: this.$stage.width() / 2, y: this.$stage.height() / 2},
             e
           );
         }
@@ -897,6 +897,6 @@ class PhotoViewer {
 /**
  * Add methods to PhotoViewer
  */
-$.extend(PhotoViewer.prototype, { draggable }, { movable }, { resizable });
+$.extend(PhotoViewer.prototype, {draggable}, {movable}, {resizable});
 
 export default PhotoViewer;

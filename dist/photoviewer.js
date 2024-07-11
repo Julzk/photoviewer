@@ -2623,10 +2623,10 @@
         var ctrlKey = e.ctrlKey || e.metaKey;
         var altKey = e.altKey;
         switch (keyCode) {
-          case 40:
+          case 38:
             this.zoomTo(1);
             break;
-          case 38:
+          case 40:
             this.resize();
             break;
           // ←
