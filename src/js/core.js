@@ -739,6 +739,12 @@ class PhotoViewer {
     const altKey = e.altKey;
 
     switch (keyCode) {
+      case 40:
+        this.zoomTo(1);
+        break;
+      case 38:
+        this.resize();
+        break;
       // ←
       case 37:
         this.jump(-1);
